@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+/**
+ * Admin's routes authentication
+ * 
+ */
+Route::prefix('/admin')->namespace('Admin')->group(function(){
+    Route::get('/dashboard', 'AdministratorController@index')->name('admin.dashboard');
+    Route::get('/login', 'AdministratorController@showLoginForm')->name('admin.login');
+}); 
