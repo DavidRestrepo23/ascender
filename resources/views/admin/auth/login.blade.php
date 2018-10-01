@@ -4,7 +4,7 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">{{__('Inicio de sesión')}}</p>
 
-      <form method="POST" action="#">
+      <form method="POST" action="{{route('admin.login')}}">
         @csrf
         <div class="form-group has-feedback">
             <div class="row">

@@ -21,6 +21,7 @@ class CreateAdministratorsTable extends Migration
             $table->string('password');
             $table->enum('state',['active','desactive'])->default('active');
             $table->timestamps();
+            $table->rememberToken();
         });
     }
 

@@ -22,6 +22,10 @@ Route::get('/', function () {
  * 
  */
 Route::prefix('/admin')->namespace('Admin')->group(function(){
-    Route::get('/dashboard', 'AdministratorController@index')->name('admin.dashboard');
-    Route::get('/login', 'AdministratorController@showLoginForm')->name('admin.login');
+    Route::get('/dashboard', 'DashboardController@index')->name('admin.dashboard');
+    Route::get('/login', 'AdministratorController@showLoginForm')->name('admin.showlogin');
+    Route::post('/login', 'AdministratorController@login')->name('admin.login');
 }); 
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
